@@ -53,3 +53,19 @@ e.detect_caps()
 e.detect_vulnerable()
 e.stack_read(offset=1)
 ```
+
+### Define your own dynamic parsing functions
+
+```
+def trigger_fmtstr(fmtstr):
+    return fmtstr
+
+def extract_fmtstr_output(output):
+    return output
+
+from pyfmtstr import exploit
+e = exploit(binary="vuln_prog/printf")
+e.trigger_fmtstr = trigger_fmtstr
+e.extract_fmtstr_output = extract_fmtstr_output
+fmtstr_addr,sc_addr = e.find_fmtstr_address()
+```
