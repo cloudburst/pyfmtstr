@@ -44,3 +44,12 @@ sc_offset,sc_align  = e.dump_stack()
 fmtstr_addr,sc_addr = e.find_fmtstr_address()
 ```
 
+### Random helper functions 
+
+```
+from pyfmtstr import exploit
+e = exploit(binary="vuln_prog/printf", shellcode=sc)
+e.detect_caps()
+e.detect_vulnerable()
+e.stack_read(offset=1)
+```
