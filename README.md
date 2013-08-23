@@ -54,7 +54,7 @@ e.detect_vulnerable()
 e.stack_read(offset=1)
 ```
 
-### Define your own dynamic parsing functions
+### Define your own custom trigger/parsing functions
 
 ```
 def trigger_fmtstr(fmtstr):
